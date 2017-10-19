@@ -328,6 +328,7 @@ LOGCHAR_IS_UNICHAR = @LOGCHAR_IS_UNICHAR@
 LOGCHAR_IS_UTF8 = @LOGCHAR_IS_UTF8@
 LOGCHAR_IS_WCHAR = @LOGCHAR_IS_WCHAR@
 LTLIBOBJS = @LTLIBOBJS@
+LT_LDFLAGS = @LT_LDFLAGS@
 LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
 LT_VERSION = @LT_VERSION@
 MAKEINFO = @MAKEINFO@
@@ -588,7 +589,7 @@ liblog4cxx_la_SOURCES = \
         xmlsocketappender.cpp \
         zipcompressaction.cpp
 
-liblog4cxx_la_LDFLAGS = -version-info @LT_VERSION@ @LIBS_ODBC@ -@APR_LIBS@
+liblog4cxx_la_LDFLAGS = $(LT_LDFLAGS) -version-info @LT_VERSION@ @LIBS_ODBC@ -@APR_LIBS@
 all: all-am
 
 .SUFFIXES:

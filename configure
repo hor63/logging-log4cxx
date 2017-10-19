@@ -633,6 +633,7 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
+LT_LDFLAGS
 LOGCHAR_IS_UNICHAR
 LOGCHAR_IS_WCHAR
 LOGCHAR_IS_UTF8
@@ -17279,6 +17280,19 @@ $as_echo "???" >&6; }
         ;;
 esac
 
+# linker flags under Cywin/Windows for shared libraries
+if test -z "$LT_LDFLAGS"
+then
+  LT_LDFLAGS=" "
+fi
+
+case $host in
+    *-mingw* | *-cygwin*)
+        LT_LDFLAGS="$LT_LDFLAGS -no-undefined"
+        ;;
+    *)
+        ;;
+esac
 
 
 # Create files
