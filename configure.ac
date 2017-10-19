@@ -442,7 +442,20 @@ case "$ac_with_logchar" in
         ;;
 esac
 
+# linker flags under Cywin/Windows for shared libraries
+if test -z "$LT_LDFLAGS"
+then
+  LT_LDFLAGS=" "
+fi
 
+case $host in
+    *-mingw* | *-cygwin*)
+        LT_LDFLAGS="$LT_LDFLAGS -no-undefined"
+        ;;
+    *)
+        ;;
+esac
+AC_SUBST(LT_LDFLAGS)
 
 # Create files
 # ----------------------------------------------------------------------------
