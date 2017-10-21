@@ -166,9 +166,9 @@ AC_DEFUN([APR_FIND_APU], [
           break
         else
           dnl look in some standard places (apparently not in builtin/default)
-          for lookdir in /usr /usr/local /usr/local/apr /opt/apr; do
-            if $TEST_X "$lookdir/bin/$apu_temp_apu_config_file"; then
-              apu_config="$lookdir/bin/$apu_temp_apu_config_file"
+          for lookdir in ../apr-util /usr/bin /usr/local/bin /usr/local/apr/bin /opt/apr/bin; do
+            if $TEST_X "$lookdir/$apu_temp_apu_config_file"; then
+              apu_config="$lookdir/$apu_temp_apu_config_file"
               ifelse([$5], [], [], [
               apu_acceptable="yes"
               $5

@@ -157,9 +157,9 @@ AC_DEFUN([APR_FIND_APR], [
           break
         else
           dnl look in some standard places
-          for lookdir in /usr /usr/local /usr/local/apr /opt/apr; do
-            if $TEST_X "$lookdir/bin/$apr_temp_apr_config_file"; then
-              apr_config="$lookdir/bin/$apr_temp_apr_config_file"
+          for lookdir in ../apr /usr/bin /usr/local/bin /usr/local/apr/bin /opt/apr/bin; do
+            if $TEST_X "$lookdir/$apr_temp_apr_config_file"; then
+              apr_config="$lookdir/$apr_temp_apr_config_file"
               ifelse([$5], [], [], [
               apr_acceptable="yes"
               $5
