@@ -7,6 +7,7 @@
 
 ar-lib
 config**
+compile
 depcomp
 install-sh
 liblog4cxx.pc
