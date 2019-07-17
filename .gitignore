@@ -1,21 +1,18 @@
 .deps
 .dirstamp
 *.lo
-*.m4
 *.o
 *.swp
 
-ar-lib
 config**
-compile
-depcomp
-install-sh
+!config.guess
+!config.sub
+!configure
 liblog4cxx.pc
 libtool
-ltmain.sh
 Makefile
 Makefile.in
-missing
+
 pom.xml.releaseBackup
 release.properties
 
